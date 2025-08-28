@@ -1,0 +1,38 @@
+Bandit Level 0
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+logout
+
+Bandit Level 0 → Level 1
+ssh bandit1@bandit.labs.overthewire.org -p 2220
+cat readme
+
+Bandit Level 1 → Level 2
+cat /home/bandit1/-
+
+Bandit Level 2 → Level 3
+cat ./"spaces in this filename"
+
+Bandit Level 3 → Level 4
+cat ./inhere/...Hiding-From-You
+
+Bandit Level 4 → Level 5
+file ./*
+
+Bandit Level 5 → Level 6
+find . -size 1033c ! -executable
+
+Bandit Level 6 → Level 7
+-type f, because we are looking for a file
+-user bandit7, to find files owned by the ‘bandit7’ user
+-group bandit6, to find files owned by the ‘bandit6’ group
+-size 33c, to find files of size 33 bytes
+find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
+Append 2>/dev/null, which will ‘hide’ all error messages
+
+Bandit Level 7 → Level 8
+cat data.txt | grep millionth
+
+Bandit Level 8 → Level 9
+sort data.txt | uniq -c | grep '^ *1 '
+
+
