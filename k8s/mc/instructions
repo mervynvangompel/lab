@@ -1,0 +1,6 @@
++++Section 1 - Introduction & Setup +++
++++++++++++++++++++++++++++++++++++++++
+0/ setup git repo
+1/ install rancher
+2/ install brew (package mgr like apt)
+3/ install kubectl k9s
