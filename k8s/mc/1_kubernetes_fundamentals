@@ -1,0 +1,39 @@
++++++++++++++++++++++++++++++++++++++++++++++++++
++++1 What is kubernetes and why do we need it?+++
++++++++++++++++++++++++++++++++++++++++++++++++++
+First: VMs
+2013: Docker: separate things from OS
+  Applications got containerized: multiple containers share compute on one VM
+  Less VMs to manage
+  Containers are light, scalable and compartamentalized
+What if we want replicas to handle more request?
+  provisioning with ansible playbooks: install docker, run container etc
+  issue: how to route traffic (containers are unaware of each other)?
+  HAProxy loadbalancer: round robin routing to VM, which routes it to container
+  Complex and manual
+Kubernetes solves the issue of managing these containers
+  OS of the cloud
+  a bunch of VMs who are able to communicate properly with each other and divide their workload
+  Under the hood: still VMs with Ubuntu
+  But with control plane
+  Those VMs are now "worker nodes"
+  YAML file: "hey kubernetes, I want 3 replicas of image xyz".
+  Control plane takes that request, checks availability and capacity of the worker nodes to distribute the work.
+  Tell K8S a certain state and it will figure it out (desired state as opposed to imperative).
+  K8S can also add nodes if needed if out of capacity.
+  Self-healing
+  K8S runs container workloads at scale
+  e.g. readers of newspapers: most active between 8am and 10am: planned / unplanned scaling out based on cpu or other metric
+
++++++++++++++++++++++++++++
++++2 Pods - Introduction+++
++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++
++++3 Pods as Code - YAML+++
++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++
++++4 Interacting with Pods+++
++++++++++++++++++++++++++++++
+
