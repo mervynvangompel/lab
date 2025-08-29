@@ -4,3 +4,24 @@
 1/ install rancher
 2/ install brew (package mgr like apt)
 3/ install kubectl k9s
+4/ install tmux and vim
+5/ start rancher desktop with defaults. Rancher starts a VM on your local with a kubernetes cluster. Uses k3s which is a natural progression coming from rancher. 
+> kubctl get pods
+should return "no resources found in default namespace"
+> kubectl get pods -A will show all pods
+> cat ~/.kube/config
+> k9s
+0 in k9s will show all pods
+:q in k9s exits
+
+> cd ~
+> vim .bashrc
+set up alias for kubectl
+add alias k='kubectl'
+set up autocomplete
+source /etc/bash_completion
+source <(kubectl completion bash)
+complete -o default -F __start_kubectl k
+
+set up vim for YAML: indentation, highlight trailing whitespace etc
+vim .vimrc
