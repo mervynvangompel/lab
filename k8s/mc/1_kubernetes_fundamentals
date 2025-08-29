@@ -1,6 +1,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++
 +++1 What is kubernetes and why do we need it?+++
 +++++++++++++++++++++++++++++++++++++++++++++++++
+
 First: VMs
 2013: Docker: separate things from OS
   Applications got containerized: multiple containers share compute on one VM
@@ -28,6 +29,20 @@ Kubernetes solves the issue of managing these containers
 +++++++++++++++++++++++++++
 +++2 Pods - Introduction+++
 +++++++++++++++++++++++++++
+
+In Kubernetes, a pod is the smallest deployable unit and can be understood as a group of one or more containers that are guaranteed to be co-located on the host machine and can share resources. Here's a breakdown of the important aspects of pods:
+
+- Definition: A pod is a collection of containers that share the same network namespace. This means they can communicate with each other using localhost.
+
+- Deployment: While you can deploy multiple containers in a single pod, it's common to have a single container pod for simpler applications. The essential idea is that several containers within a pod can collaborate as a unit and share storage, networking, etc.
+
+- Resource Sharing: Containers in a pod can share resources like storage volumes, which helps in managing stateful applications.
+
+- Nautical Theme: The term "pod" comes from a group of whales swimming together, reflecting the idea that multiple containers work in harmony within a single pod.
+
+- Networking: Since all containers in a pod share the same IP address, they can easily find and communicate with each other using standard networking practices.
+
+Overall, pods serve as an effective way to run and manage applications in a Kubernetes cluster while ensuring that the containers that need to work together are located on the same host and can share resources efficiently.
 
 +++++++++++++++++++++++++++
 +++3 Pods as Code - YAML+++
