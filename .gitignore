@@ -1,19 +1,55 @@
+# =========================
 # Terraform
+# =========================
 **/.terraform/
 **/.terraform.lock.hcl
 **/terraform.tfstate
-**/terraform.tfstate.backup
-**/.tfplan
+**/terraform.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
 
+# =========================
 # Python
-**/__pycache__/
-**/*.pyc
-**/.venv/
-**/venv/
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+.eggs/
+*.manifest
+*.spec
+*.db
 
-# Linux (general)
-*.swp
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb~
+
+# =========================
+# Linux / OS Junk Files
+# =========================
 *.log
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
 
-# Kubernetes (manifests, config caches, etc.)
-**/.kube/
+# =========================
+# Kubernetes
+# =========================
+.kube/
+*.kubeconfig
+*.yaml~
+*.yml~
