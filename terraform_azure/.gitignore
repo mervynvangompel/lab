@@ -6,7 +6,7 @@
 *.tfstate.backup
 
 # Crash log files
-crash.log
+*.log
 
 # Ignore override files (useful for local dev)
 override.tf

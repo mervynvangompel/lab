@@ -9,6 +9,9 @@ terraform {
 
 provider "azurerm" {
   features {}
+  subscription_id = "2f52368f-74f5-4c37-8dbe-2bcb55ac8ecf"
+  tenant_id       = "d8a30155-3081-4ddb-906b-4735e944d822"
+  use_cli         = true
 }
 
 # Resource Group
