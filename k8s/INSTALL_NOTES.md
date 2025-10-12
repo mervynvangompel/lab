@@ -82,6 +82,7 @@ grep cgroup /proc/filesystems
 sudo systemctl start k3s
 sudo systemctl status k3s
 sudo k3s kubectl get nodes
+```
 
 > Only the master node will appear for now.
   
