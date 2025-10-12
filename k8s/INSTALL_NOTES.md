@@ -66,7 +66,26 @@ curl -sfL https://get.k3s.io | sh -
 ```bash
 sudo k3s kubectl get nodes
 ```
+
+- Issue encountered:
+  Error: failed to find memory cgroup (v2)
+  Control Groups (cgroups) are a Linux kernel feature that lets the OS limit, isolate, and measure how much CPU, memory, and I/O each process (or group of processes) can use.
+  Troubleshoot and fix:
+```bash
+sudo systemctl start k3s
+sudo systemctl status k3s
+sudo journalctl -xeu k3s.service | tail -n 40
+sudo sed -i '$ s/$/ cgroup_memory=1 cgroup_enable=memory/' /boot/firmware/cmdline.txt
+cat /boot/firmware/cmdline.txt
+sudo reboot
+grep cgroup /proc/filesystems
+sudo systemctl start k3s
+sudo systemctl status k3s
+sudo k3s kubectl get nodes
+
 > Only the master node will appear for now.
+  
+```bash
 
 - Retrieve the join token for workers:
 ```bash
